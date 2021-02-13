@@ -24,7 +24,7 @@ public class MovieController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping(path = "/api/movie/salvar")
+    @PostMapping(path = "/api/movie")
     public MovieModel salvar(@RequestBody MovieModel movie){
         return repository.save(movie);
     }
@@ -59,12 +59,5 @@ public class MovieController {
         return repository.findAll();
     }
 
-//    @GetMapping(path = "/api/movie/list")
-//    public ResponseEntity listar(@PathVariable("id") Integer id){
-//
-//        return repository.findAll()
-//                .map(record -> ResponseEntity.ok().body(record))
-//                .orElse(ResponseEntity.notFound().build());
-//    }
 
 }
